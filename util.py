@@ -27,11 +27,16 @@ def list_collapse(lst):
     """
     only collapses the second layer of list; does not touch others such as individual data
     or other data containers (sets,dicts,etc)
-    ""9
+    """
     if not is_list(lst):
         raise TypeError(f"Wrong type: list_collapse() expected list; got {type(lst)}")
     m=[]
     for sub in lst:
         if is_list(sub):
             append_merge(m,sub)
-    
+    return lst
+
+def Bsort(lst,start,end,method = lambda a,b : a<b,type=None,deal="d"):
+    """Bsort"""
+    #unfinished
+ 

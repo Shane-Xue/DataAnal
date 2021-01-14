@@ -54,8 +54,8 @@ def dealer(deal):
     the dealer will not see extra charecters; it will only see if b,d,p is present
     """
     delete=(deal.find("d")!=-1)
-    pack=(deal.find("p")!=1)
-    back=(deal.find("b")!=1)
+    pack=(deal.find("p")!=-1)
+    back=(deal.find("b")!=-1)
     if back and delete:
         throw CmdError("d and b were given to the sort dealer at the same time") #to be written
     return delete,pack,back

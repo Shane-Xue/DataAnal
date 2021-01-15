@@ -1,5 +1,10 @@
 #utilities
 
+#exceptions
+class CmdError(Exception):
+    def __init__(self,string,cmd=""):
+        super().__init__(self,string,cmd)
+
 #type helpers
 def are_lists(*args):
     for data in args:
@@ -10,8 +15,8 @@ def are_lists(*args):
 def is_list(arg):
     return type(arg)==list
 
-def is_str(*args):
-    for strs in 
+def is_str(arg):
+    return type(arg)==str 
 
 def copy_merge(one,two):
     rt=[]
@@ -57,7 +62,7 @@ def dealer(deal):
     pack=(deal.find("p")!=-1)
     back=(deal.find("b")!=-1)
     if back and delete:
-        throw CmdError("d and b were given to the sort dealer at the same time") #to be written
+        raise CmdError("d and b were given to the sort dealer at the same time",deal) #to be written
     return delete,pack,back
 
 
